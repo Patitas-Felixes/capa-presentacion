@@ -5,6 +5,10 @@ import App from './App.vue'
 import PrimeVue from 'primevue/config';
 import Aura from '@primeuix/themes/aura';
 
+//FORM KITS
+import { plugin, defaultConfig } from '@formkit/vue'
+import config from '../src/formkit.config.js'
+
 //TOAST
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
@@ -41,7 +45,7 @@ import ConfirmationService from 'primevue/confirmationservice';
 import { Form } from '@primevue/forms';
 
 //ROUTER
-import router from './shared/services/routes.js'
+import router from './router'
 
 //esto es de mi proyecto capaz lo podemos usar después:v
 // Forzar la eliminación del token de autenticación al iniciar la aplicación
@@ -62,6 +66,9 @@ app.use(PrimeVue,{
         }
     },
 });
+
+//FORM-KITS
+app.use(plugin, defaultConfig(config));
 
 //router for page view
 app.use(router)

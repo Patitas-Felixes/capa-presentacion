@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formkit/i18n": "^1.6.9",
+    "@formkit/icons": "^1.6.9",
+    "@formkit/themes": "^1.6.9",
+    "@formkit/vue": "^1.6.9",
     "@primeuix/themes": "^1.1.2",
     "@primevue/forms": "^4.3.5",
     "axios": "^1.10.0",
