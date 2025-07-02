@@ -68,7 +68,7 @@ const handleLogin = async (fields) => {
   align-items: center;
   min-height: 100vh; /* Ocupa toda la altura de la ventana */
   background-image: url('../../assets/background-images/login-bg.jpg');
-  background-size: cover; /* La imagen cubre todo el espacio */
+  background-size: cover; /* La imagen cubret todoelespacio*/
   background-position: center; /* Centra la imagen de fondo */
 }
 
