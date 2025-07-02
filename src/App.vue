@@ -1,7 +1,18 @@
 <script>
+import { categoryService } from './shared/services/category.service';
+
 export default {
   name: 'App',
-
+  mounted() {
+    categoryService.getAll()
+        .then(response => {
+          // 'response' aquí ya es el array de datos, porque BaseService.getAll() devuelve response.data
+          console.log('Conexión exitosa con el backend:', response);
+        })
+        .catch(error => {
+          console.error('Error al conectar con el backend:', error);
+        });
+  }
   /*EN TEST*/
   //
   //data() {
