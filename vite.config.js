@@ -9,7 +9,7 @@ export default defineConfig({
       '/backend': {
         target: 'http://contenedor_app:3000',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/backend/, '')
+        rewrite: (path) => path.replace(/^\/backend/, '/api')
       }
     },
     watch: {
