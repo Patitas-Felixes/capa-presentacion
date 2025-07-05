@@ -1,6 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
+import { AuthService } from "../services/auth.service.js";
 
 const router = useRouter();
 const isLoading = ref(false);
@@ -12,16 +13,31 @@ const handleLogin = async (fields) => {
   //de los formkit de los inputs se establece el disabled a isLoading que se convierte en true
   isLoading.value = true;
 
-  // Simulación de autenticación exitosa
-  // Aquí puedes agregar tu lógica de autenticación
-  console.log('Iniciando sesión con:', fields);
+  try {
+    // Llamada al servicio de autenticación
+    const authService = new AuthService();
+    const response = await authService.login(fields);
+
+    // Guardar los datos del usuario en localStorage
+    localStorage.setItem('user', JSON.stringify(response.user));
+
+    console.log('Iniciando sesión con:', response);
+
+    if(response.es_admin === true) {
+      await router.replace('/admin'); // Redirige al panel de administración si es un administrador
+    }
+
+    else await router.replace('/home'); // Redirige a la página de inicio
+  }
+  catch (error) {
+    console.error('Error durante el inicio de sesión:', error);
+    isLoading.value = false; // Restablece el estado en caso de error
+    return;
+  }
 
   // Simulación de una espera de red. FormKit mostrará el spinner en el botón.
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  // Simulación de redirección exitosa
-  //alert('Inicio de sesión exitoso');
-  await router.replace('/home'); // Redirige a la página de inicio
   isLoading.value = false; // Restablece el estado
 };
 
