@@ -35,6 +35,12 @@ const routes = [
         //component: HomePage // Componente de la página de inicio
     },
 
+    {
+        path: '/admin',
+        name: 'Admin',
+        //component: AdminPage // Componente de la página de administración
+    },
+
     // Manejar rutas no encontradas
     {
         path: '/:pathMatch(.*)*',
