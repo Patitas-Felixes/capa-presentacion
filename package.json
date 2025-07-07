@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cloudinary/url-gen": "^1.21.0",
+    "@cloudinary/vue": "^1.13.3",
     "@formkit/i18n": "^1.6.9",
     "@formkit/icons": "^1.6.9",
     "@formkit/themes": "^1.6.9",
@@ -16,6 +18,7 @@
     "@primeuix/themes": "^1.1.2",
     "@primevue/forms": "^4.3.5",
     "axios": "^1.10.0",
+    "cloudinary": "^2.7.0",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.5",

@@ -2,6 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './main-style.css'
 
+//CLOUDINARY
+import { Cloudinary } from "@cloudinary/url-gen";
+
 //PRIME-VUE
 import PrimeVue from 'primevue/config';
 import Aura from '@primeuix/themes/aura';
@@ -37,6 +40,8 @@ import ProgressSpinner from 'primevue/progressspinner';
 import Select from 'primevue/select';
 import IftaLabel from 'primevue/iftalabel';
 import CascadeSelect from 'primevue/cascadeselect';
+import Textarea from 'primevue/textarea';
+import FileUpload from 'primevue/fileupload';
 
 //confirm dialog
 import ConfirmDialog from 'primevue/confirmdialog';
@@ -68,6 +73,18 @@ app.use(PrimeVue,{
     },
 });
 
+const cloudinary = new Cloudinary({
+    cloud: {
+        cloudName: 'daibtpozv'
+    },
+    url: {
+        secure: true // usar https
+    }
+});
+
+app.provide('cloudinary', cloudinary);
+
+
 //FORM-KITS
 app.use(plugin, defaultConfig(config));
 
@@ -96,6 +113,7 @@ app.component('pb-ProgressSpinner', ProgressSpinner);
 app.component('pb-Select', Select);
 app.component('pb-IftaLabel', IftaLabel);
 app.component('pb-CascadeSelect', CascadeSelect);
+app.component('pb-Textarea', Textarea);
 
 //FOR DATATABLE COMPONENT
 app.component('pb-DataTable', DataTable);
@@ -104,6 +122,7 @@ app.component('pb-ColumnGroup', ColumnGroup);
 app.component('pb-Row', Row);
 //IMAGE
 app.component('pb-Image', Image);
+app.component('pb-FileUpload', FileUpload);
 
 //FORMS
 app.component('pb-Form', Form);
