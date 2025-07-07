@@ -25,5 +25,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/contenedor_app:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/contenedor_presentacion_prod:latest
           file: ./Dockerfile
