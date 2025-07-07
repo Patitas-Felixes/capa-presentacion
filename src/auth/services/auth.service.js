@@ -38,7 +38,11 @@ export class AuthService extends BaseService {
             const response = await this.http.post(`${this.resourcePath()}/login`, {
                 email: credentials.email,
                 password: credentials.password
-            });
+            },
+                { withCredentials: true }
+
+
+            );
 
             console.log('resourcepath:', this.resourcePath());
 

@@ -16,6 +16,7 @@ export class BaseService {
         // Configure HTTP client
         this.http.defaults.timeout = this.timeout;
         this.http.defaults.headers.common['Content-Type'] = 'application/json';
+        this.http.defaults.withCredentials = true;
 
         // Setup interceptors
         this._setupRequestInterceptor();
