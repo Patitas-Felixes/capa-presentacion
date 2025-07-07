@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 //Importar las views o pages
 import LoginPage from "../auth/pages/LoginPage.vue";
 import RegisterPage from "../auth/pages/RegisterPage.vue";
+import AdminPage from "../admin/pages/AdminPage.vue";
+import DiscoveryPage from "../discovery/pages/DiscoveryPage.vue";
 
 
 // Definimos las rutas
@@ -32,13 +34,13 @@ const routes = [
     {
         path: '/home',
         name: 'Home',
-        //component: HomePage // Componente de la página de inicio
+        component: DiscoveryPage // Componente de la página de inicio
     },
 
     {
         path: '/admin',
         name: 'Admin',
-        //component: AdminPage // Componente de la página de administración
+        component: AdminPage // Componente de la página de administración
     },
 
     // Manejar rutas no encontradas
