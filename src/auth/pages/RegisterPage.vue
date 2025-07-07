@@ -113,29 +113,41 @@ const handleRegister = async (fields) => {
 
 .register-card {
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
-  background-color: white; /* Para que el formulario sea legible sobre el fondo */
+  background-color: rgba(255, 255, 255, 0.18); /* Blanco translúcido */
+  backdrop-filter: blur(4px); /* Desenfoque de fondo */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
 }
 
 h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #1976d2;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.07em; /* Espaciado entre letras */
 }
 
 .login-link {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.07em; /* Espaciado entre letras */
+
 }
 
 .login-link a {
-  color: var(--p-primary-color);
   text-decoration: none;
+  color: #1976d2; /* Azul vibrante, excelente contraste */
+  font-weight: 600;
 }
 
 .login-link a:hover {
   text-decoration: underline;
+  color: #0d47a1; /* Azul más oscuro al pasar el mouse */
 }
 </style>
